@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
-import Dummy from '../components/dummy.js'
 
 export default function Home() {
   return (
@@ -20,65 +19,42 @@ export default function Home() {
         <meta name="keyword" content="nextjs, hunting coder, blog, hunting blog, coding blog, coding error, coding tips, tech, technology" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className='py-4 flex items-center justify-center w-full'>
-        <ul className='flex justify-center items-center'>
-          <li className="px-4 text-lg hover:text-black text-gray-500">
-            <Link href="/" scroll={false}>
-              <a>Home</a>
-            </Link>
-          </li>
-          <li className="px-4 text-lg hover:text-black text-gray-500">
-            <Link href="/about" scroll={false}>
-              <a>About</a>
-            </Link>
-          </li>
-          <li className="px-4 text-lg hover:text-black text-gray-500">
-            <Link href="/contact" scroll={false}>
-              <a>Contact</a>
-            </Link>
-          </li>
-          <li className="px-4 text-lg hover:text-black text-gray-500">
-            <Link href="/blogs" scroll={false}>
-              <a>Blogs</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
 
       <main className={styles.main}>
         <h1 className='text-blue-500 text-4xl'>
           Hunting coder🌝
         </h1>
 
-        <span className='styled-jsx-span mx-auto my-dummy'>😍❤😁😎🤞💋emogie😍❤😁😎🤞💋</span>
-        <Dummy />
-
         <p className={styles.description}>
           A blog for hunting coders by a hunting coder
         </p>
 
         <div>
-          <h2>Popular blogs</h2>
-          <div className="my-4
-          ">
-            <h4>how to learn javascript</h4>
-            <p>javascript is a scripting language to design the logic for the web</p>
-          </div>
-          <div className="my-4
-          ">
-            <h4>how to learn javascript</h4>
-            <p>javascript is a scripting language to design the logic for the web</p>
-          </div>
-          <div className="my-4
-          ">
-            <h4>how to learn javascript</h4>
-            <p>javascript is a scripting language to design the logic for the web</p>
-          </div>
-          <div className="my-4
-          ">
-            <h4>how to learn javascript</h4>
-            <p>javascript is a scripting language to design the logic for the web</p>
-          </div>
+          <h2 className='text-2xl font-bold'>Popular blogs</h2>
+          <Link href={'/blogpost/how to learn javascript'}>
+            <div className="my-10">
+              <h4 className='text-xl font-semibold'>how to learn javascript</h4>
+              <p>javascript is a scripting language to design the logic for the web</p>
+            </div>
+          </Link>
+          <Link href={'/blogpost/how to learn nextjs'}>
+            <div className="my-10">
+              <h4 className='text-xl font-semibold'>how to learn nextjs</h4>
+              <p>javascript is a scripting language to design the logic for the web</p>
+            </div>
+          </Link>
+          <Link href={'/blogpost/how to learn python'}>
+            <div className="my-10">
+              <h4 className='text-xl font-semibold'>how to learn python</h4>
+              <p>javascript is a scripting language to design the logic for the web</p>
+            </div>
+          </Link>
+          <Link href={'/blogpost/how to learn solidity'}>
+            <div className="my-10">
+              <h4 className='text-xl font-semibold'>how to learn solidity</h4>
+              <p>javascript is a scripting language to design the logic for the web</p>
+            </div>
+          </Link>
         </div>
 
       </main>
