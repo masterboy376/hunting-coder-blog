@@ -1,15 +1,23 @@
-import React from 'react'
-import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react'
 
-const slug = () => {
-  const router = useRouter()
-  const { slug } = router.query
+const slug = (props) => {
+  const [blog, setBlog] = useState(props.parsedData)
+
   return (
-    <div className='w-3/4 mx-auto min-h-screen flex flex-col items-center'>
-      <h1 className="text-2xl font-bold">this is title for {slug}</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores modi debitis sed quas a ipsam quam pariatur dolore sunt. Maiores, nostrum, autem, quam repudiandae quaerat veritatis nesciunt culpa optio pariatur placeat veniam doloremque praesentium?</p>
+    <div className='w-3/4 mx-auto min-h-screen flex flex-col justify-center items-center'>
+      <h1 className="text-2xl font-bold">{blog && blog.title}</h1>
+      <p>{blog && blog.content}</p>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  const {slug} = context.query
+  let rawData = await fetch(`http://localhost:3000/api/getblog?slug=${slug}`)
+  let parsedData = await rawData.json()
+  return {
+    props: { parsedData }
+  }
 }
 
 export default slug
