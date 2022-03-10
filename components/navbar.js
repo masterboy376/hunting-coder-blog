@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Navbar = () => {
     return (
-        <nav className='py-4 flex items-center justify-center w-full'>
+        <nav className='py-4 flex items-center justify-center w-screen absolute top-0 left-0'>
 
             <ul className='flex justify-center items-center'>
 
